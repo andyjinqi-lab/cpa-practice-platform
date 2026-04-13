@@ -200,6 +200,10 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    position: static;
+  }
+
   .nav-bar,
   .footer-inner {
     flex-direction: column;

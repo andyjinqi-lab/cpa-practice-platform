@@ -1,0 +1,26 @@
+本地（PowerShell）更新代码
+
+cd "E:\Trae Projects\CPA"
+git add .
+git commit -m "你的修改说明"
+git push origin main
+服务器（腾讯云）发布上线
+
+cd /opt/cpa/app
+/opt/cpa/app/deploy.sh
+如果服务器 git pull 报同名文件冲突（例如 deploy.sh）
+
+cd /opt/cpa/app
+mv deploy.sh deploy.sh.local.bak
+git pull origin main
+chmod +x /opt/cpa/app/deploy.sh
+/opt/cpa/app/deploy.sh
+改了 .env（例如换 Resend key）后
+
+cd /opt/cpa/app
+pm2 restart cpa-api --update-env
+常用排查
+
+pm2 list
+pm2 logs cpa-api --lines 50 --nostream
+curl -I https://cpa.afinance.site
