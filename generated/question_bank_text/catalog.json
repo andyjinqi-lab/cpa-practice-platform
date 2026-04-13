@@ -1,0 +1,1271 @@
+[
+  {
+    "subject_dir": "accounting",
+    "year": 2013,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2013_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2013_会计_答案.txt",
+    "page_count": 5,
+    "char_count": 5330
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2013,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2013_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2013_会计_题目.txt",
+    "page_count": 6,
+    "char_count": 8406
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2014,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2014_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2014_会计_答案.txt",
+    "page_count": 6,
+    "char_count": 6274
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2014,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2014_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2014_会计_题目.txt",
+    "page_count": 6,
+    "char_count": 8339
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2015,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2015_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2015_会计_答案.txt",
+    "page_count": 6,
+    "char_count": 5961
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2015,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2015_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2015_会计_题目.txt",
+    "page_count": 7,
+    "char_count": 9130
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2016_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2016_会计_答案.txt",
+    "page_count": 6,
+    "char_count": 7477
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2016_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2016_会计_题目.txt",
+    "page_count": 8,
+    "char_count": 11341
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2017_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2017_会计_答案.txt",
+    "page_count": 10,
+    "char_count": 9296
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2017_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2017_会计_题目.txt",
+    "page_count": 10,
+    "char_count": 11653
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2018_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2018_会计_答案.txt",
+    "page_count": 10,
+    "char_count": 8912
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2018_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2018_会计_题目.txt",
+    "page_count": 10,
+    "char_count": 10587
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2019_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2019_会计_答案.txt",
+    "page_count": 9,
+    "char_count": 7914
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2019_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2019_会计_题目.txt",
+    "page_count": 9,
+    "char_count": 11717
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2020_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2020_会计_答案.txt",
+    "page_count": 10,
+    "char_count": 9555
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2020_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2020_会计_题目.txt",
+    "page_count": 10,
+    "char_count": 12380
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2021_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2021_会计_答案.txt",
+    "page_count": 11,
+    "char_count": 11973
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2021_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2021_会计_题目.txt",
+    "page_count": 10,
+    "char_count": 13818
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2022_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2022_会计_答案.txt",
+    "page_count": 8,
+    "char_count": 8834
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2022_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2022_会计_题目.txt",
+    "page_count": 8,
+    "char_count": 11997
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/accounting/2023_会计_答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2023_会计_答案.txt",
+    "page_count": 8,
+    "char_count": 9272
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/accounting/2023_会计_题目.pdf",
+    "output_text": "generated/question_bank_text/accounting/2023_会计_题目.txt",
+    "page_count": 12,
+    "char_count": 12167
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/accounting/2024_会计_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2024_会计_题目和答案.txt",
+    "page_count": 10,
+    "char_count": 13057
+  },
+  {
+    "subject_dir": "accounting",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/accounting/2025_会计_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/accounting/2025_会计_题目和答案.txt",
+    "page_count": 25,
+    "char_count": 22936
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2013,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2013_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2013_审计_答案.txt",
+    "page_count": 7,
+    "char_count": 9216
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2013,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2013_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2013_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 13159
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2014,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2014_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2014_审计_答案.txt",
+    "page_count": 7,
+    "char_count": 8051
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2014,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2014_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2014_审计_题目.txt",
+    "page_count": 11,
+    "char_count": 12780
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2015,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2015_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2015_审计_答案.txt",
+    "page_count": 7,
+    "char_count": 9080
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2015,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2015_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2015_审计_题目.txt",
+    "page_count": 10,
+    "char_count": 11669
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2016_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2016_审计_答案.txt",
+    "page_count": 7,
+    "char_count": 8211
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2016_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2016_审计_题目.txt",
+    "page_count": 10,
+    "char_count": 11803
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2017_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2017_审计_答案.txt",
+    "page_count": 8,
+    "char_count": 8159
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2017_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2017_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 11613
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2018_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2018_审计_答案.txt",
+    "page_count": 8,
+    "char_count": 7159
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2018_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2018_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 11499
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2019_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2019_审计_答案.txt",
+    "page_count": 8,
+    "char_count": 7055
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2019_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2019_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 12206
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2020_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2020_审计_答案.txt",
+    "page_count": 8,
+    "char_count": 8297
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2020_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2020_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 12520
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2021_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2021_审计_答案.txt",
+    "page_count": 10,
+    "char_count": 10751
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2021_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2021_审计_题目.txt",
+    "page_count": 13,
+    "char_count": 12525
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2022_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2022_审计_答案.txt",
+    "page_count": 6,
+    "char_count": 7168
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2022_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2022_审计_题目.txt",
+    "page_count": 11,
+    "char_count": 12416
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/audit/2023_审计_答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2023_审计_答案.txt",
+    "page_count": 6,
+    "char_count": 8109
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/audit/2023_审计_题目.pdf",
+    "output_text": "generated/question_bank_text/audit/2023_审计_题目.txt",
+    "page_count": 12,
+    "char_count": 13822
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/audit/2024_审计_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2024_审计_题目和答案.txt",
+    "page_count": 8,
+    "char_count": 9563
+  },
+  {
+    "subject_dir": "audit",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/audit/2025_审计_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/audit/2025_审计_题目和答案.txt",
+    "page_count": 20,
+    "char_count": 16968
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2013,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2013_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2013_财务成本管理_答案.txt",
+    "page_count": 5,
+    "char_count": 4982
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2013,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2013_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2013_财务成本管理_题目.txt",
+    "page_count": 6,
+    "char_count": 4776
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2014,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2014_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2014_财务成本管理_答案.txt",
+    "page_count": 8,
+    "char_count": 9909
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2014,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2014_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2014_财务成本管理_题目.txt",
+    "page_count": 9,
+    "char_count": 7345
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2015,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2015_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2015_财务成本管理_答案.txt",
+    "page_count": 9,
+    "char_count": 12279
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2015,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2015_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2015_财务成本管理_题目.txt",
+    "page_count": 11,
+    "char_count": 7814
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2016_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2016_财务成本管理_答案.txt",
+    "page_count": 8,
+    "char_count": 10674
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2016_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2016_财务成本管理_题目.txt",
+    "page_count": 8,
+    "char_count": 7544
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2017_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2017_财务成本管理_答案.txt",
+    "page_count": 10,
+    "char_count": 9384
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2017_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2017_财务成本管理_题目.txt",
+    "page_count": 11,
+    "char_count": 8245
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2018_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2018_财务成本管理_答案.txt",
+    "page_count": 11,
+    "char_count": 11538
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2018_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2018_财务成本管理_题目.txt",
+    "page_count": 12,
+    "char_count": 8805
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2019_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2019_财务成本管理_答案.txt",
+    "page_count": 10,
+    "char_count": 11267
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2019_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2019_财务成本管理_题目.txt",
+    "page_count": 9,
+    "char_count": 8046
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2020_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2020_财务成本管理_答案.txt",
+    "page_count": 10,
+    "char_count": 10532
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2020_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2020_财务成本管理_题目.txt",
+    "page_count": 11,
+    "char_count": 8771
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2021_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2021_财务成本管理_答案.txt",
+    "page_count": 12,
+    "char_count": 11166
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2021_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2021_财务成本管理_题目.txt",
+    "page_count": 13,
+    "char_count": 8396
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2022_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2022_财务成本管理_答案.txt",
+    "page_count": 9,
+    "char_count": 10534
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2022_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2022_财务成本管理_题目.txt",
+    "page_count": 10,
+    "char_count": 8819
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/finance/2023_财务成本管理_答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2023_财务成本管理_答案.txt",
+    "page_count": 6,
+    "char_count": 8894
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/finance/2023_财务成本管理_题目.pdf",
+    "output_text": "generated/question_bank_text/finance/2023_财务成本管理_题目.txt",
+    "page_count": 12,
+    "char_count": 8691
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/finance/2024_财务成本管理_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2024_财务成本管理_题目和答案.txt",
+    "page_count": 11,
+    "char_count": 13279
+  },
+  {
+    "subject_dir": "finance",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/finance/2025_财务成本管理_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/finance/2025_财务成本管理_题目和答案.txt",
+    "page_count": 10,
+    "char_count": 7782
+  },
+  {
+    "subject_dir": "law",
+    "year": 2013,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2013_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2013_经济法_答案.txt",
+    "page_count": 6,
+    "char_count": 9233
+  },
+  {
+    "subject_dir": "law",
+    "year": 2013,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2013_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2013_经济法_题目.txt",
+    "page_count": 7,
+    "char_count": 8866
+  },
+  {
+    "subject_dir": "law",
+    "year": 2014,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2014_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2014_经济法_答案.txt",
+    "page_count": 6,
+    "char_count": 8815
+  },
+  {
+    "subject_dir": "law",
+    "year": 2014,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2014_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2014_经济法_题目.txt",
+    "page_count": 7,
+    "char_count": 8662
+  },
+  {
+    "subject_dir": "law",
+    "year": 2015,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2015_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2015_经济法_答案.txt",
+    "page_count": 5,
+    "char_count": 7954
+  },
+  {
+    "subject_dir": "law",
+    "year": 2015,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2015_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2015_经济法_题目.txt",
+    "page_count": 7,
+    "char_count": 7908
+  },
+  {
+    "subject_dir": "law",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2016_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2016_经济法_答案.txt",
+    "page_count": 9,
+    "char_count": 15221
+  },
+  {
+    "subject_dir": "law",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2016_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2016_经济法_题目.txt",
+    "page_count": 11,
+    "char_count": 14167
+  },
+  {
+    "subject_dir": "law",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2017_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2017_经济法_答案.txt",
+    "page_count": 7,
+    "char_count": 7979
+  },
+  {
+    "subject_dir": "law",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2017_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2017_经济法_题目.txt",
+    "page_count": 10,
+    "char_count": 9790
+  },
+  {
+    "subject_dir": "law",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2018_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2018_经济法_答案.txt",
+    "page_count": 8,
+    "char_count": 8750
+  },
+  {
+    "subject_dir": "law",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2018_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2018_经济法_题目.txt",
+    "page_count": 10,
+    "char_count": 8751
+  },
+  {
+    "subject_dir": "law",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2019_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2019_经济法_答案.txt",
+    "page_count": 8,
+    "char_count": 9006
+  },
+  {
+    "subject_dir": "law",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2019_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2019_经济法_题目.txt",
+    "page_count": 10,
+    "char_count": 9316
+  },
+  {
+    "subject_dir": "law",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2020_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2020_经济法_答案.txt",
+    "page_count": 8,
+    "char_count": 9615
+  },
+  {
+    "subject_dir": "law",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2020_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2020_经济法_题目.txt",
+    "page_count": 10,
+    "char_count": 8596
+  },
+  {
+    "subject_dir": "law",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2021_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2021_经济法_答案.txt",
+    "page_count": 8,
+    "char_count": 8729
+  },
+  {
+    "subject_dir": "law",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2021_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2021_经济法_题目.txt",
+    "page_count": 12,
+    "char_count": 8921
+  },
+  {
+    "subject_dir": "law",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2022_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2022_经济法_答案.txt",
+    "page_count": 4,
+    "char_count": 4253
+  },
+  {
+    "subject_dir": "law",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2022_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2022_经济法_题目.txt",
+    "page_count": 5,
+    "char_count": 4256
+  },
+  {
+    "subject_dir": "law",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/law/2023_经济法_答案.pdf",
+    "output_text": "generated/question_bank_text/law/2023_经济法_答案.txt",
+    "page_count": 7,
+    "char_count": 8824
+  },
+  {
+    "subject_dir": "law",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/law/2023_经济法_题目.pdf",
+    "output_text": "generated/question_bank_text/law/2023_经济法_题目.txt",
+    "page_count": 12,
+    "char_count": 7489
+  },
+  {
+    "subject_dir": "law",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/law/2024_经济法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/law/2024_经济法_题目和答案.txt",
+    "page_count": 18,
+    "char_count": 22288
+  },
+  {
+    "subject_dir": "law",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/law/2025_经济法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/law/2025_经济法_题目和答案.txt",
+    "page_count": 22,
+    "char_count": 16598
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2013,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2013_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2013_公司战略与风险管理_答案.txt",
+    "page_count": 7,
+    "char_count": 10313
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2013,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2013_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2013_公司战略与风险管理_题目.txt",
+    "page_count": 7,
+    "char_count": 8429
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2014,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2014_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2014_公司战略与风险管理_答案.txt",
+    "page_count": 6,
+    "char_count": 8010
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2014,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2014_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2014_公司战略与风险管理_题目.txt",
+    "page_count": 6,
+    "char_count": 7378
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2015,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2015_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2015_公司战略与风险管理_答案.txt",
+    "page_count": 7,
+    "char_count": 11972
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2015,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2015_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2015_公司战略与风险管理_题目.txt",
+    "page_count": 7,
+    "char_count": 7811
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2016_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2016_公司战略与风险管理_答案.txt",
+    "page_count": 6,
+    "char_count": 9245
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2016_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2016_公司战略与风险管理_题目.txt",
+    "page_count": 8,
+    "char_count": 11105
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2017_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2017_公司战略与风险管理_答案.txt",
+    "page_count": 13,
+    "char_count": 15104
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2017_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2017_公司战略与风险管理_题目.txt",
+    "page_count": 13,
+    "char_count": 13882
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2018_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2018_公司战略与风险管理_答案.txt",
+    "page_count": 16,
+    "char_count": 17234
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2018_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2018_公司战略与风险管理_题目.txt",
+    "page_count": 16,
+    "char_count": 15307
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2019_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2019_公司战略与风险管理_答案.txt",
+    "page_count": 14,
+    "char_count": 14935
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2019_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2019_公司战略与风险管理_题目.txt",
+    "page_count": 16,
+    "char_count": 15074
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2020_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2020_公司战略与风险管理_答案.txt",
+    "page_count": 15,
+    "char_count": 15757
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2020_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2020_公司战略与风险管理_题目.txt",
+    "page_count": 15,
+    "char_count": 13765
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2021_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2021_公司战略与风险管理_答案.txt",
+    "page_count": 17,
+    "char_count": 19498
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2021_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2021_公司战略与风险管理_题目.txt",
+    "page_count": 15,
+    "char_count": 14393
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2022_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2022_公司战略与风险管理_答案.txt",
+    "page_count": 12,
+    "char_count": 20839
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2022_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2022_公司战略与风险管理_题目.txt",
+    "page_count": 11,
+    "char_count": 15257
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/strategy/2023_公司战略与风险管理_答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2023_公司战略与风险管理_答案.txt",
+    "page_count": 9,
+    "char_count": 14002
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/strategy/2023_公司战略与风险管理_题目.pdf",
+    "output_text": "generated/question_bank_text/strategy/2023_公司战略与风险管理_题目.txt",
+    "page_count": 12,
+    "char_count": 14679
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/strategy/2024_公司战略与风险管理_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2024_公司战略与风险管理_题目和答案.txt",
+    "page_count": 12,
+    "char_count": 14002
+  },
+  {
+    "subject_dir": "strategy",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/strategy/2025_公司战略与风险管理_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/strategy/2025_公司战略与风险管理_题目和答案.txt",
+    "page_count": 17,
+    "char_count": 16431
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2013,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/tax/2013_税法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2013_税法_题目和答案.txt",
+    "page_count": 21,
+    "char_count": 23990
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2014,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/tax/2014_税法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2014_税法_题目和答案.txt",
+    "page_count": 25,
+    "char_count": 30060
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2015,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/tax/2015_税法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2015_税法_题目和答案.txt",
+    "page_count": 18,
+    "char_count": 20111
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2016,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2016_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2016_税法_答案.txt",
+    "page_count": 7,
+    "char_count": 8974
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2016,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2016_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2016_税法_题目.txt",
+    "page_count": 8,
+    "char_count": 8981
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2017,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2017_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2017_税法_答案.txt",
+    "page_count": 12,
+    "char_count": 12223
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2017,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2017_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2017_税法_题目.txt",
+    "page_count": 11,
+    "char_count": 9094
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2018,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2018_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2018_税法_答案.txt",
+    "page_count": 9,
+    "char_count": 12497
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2018,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2018_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2018_税法_题目.txt",
+    "page_count": 9,
+    "char_count": 8573
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2019,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2019_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2019_税法_答案.txt",
+    "page_count": 13,
+    "char_count": 13705
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2019,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2019_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2019_税法_题目.txt",
+    "page_count": 12,
+    "char_count": 9715
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2020,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2020_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2020_税法_答案.txt",
+    "page_count": 9,
+    "char_count": 10385
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2020,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2020_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2020_税法_题目.txt",
+    "page_count": 10,
+    "char_count": 9225
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2021,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2021_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2021_税法_答案.txt",
+    "page_count": 12,
+    "char_count": 13623
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2021,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2021_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2021_税法_题目.txt",
+    "page_count": 9,
+    "char_count": 9719
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2022,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2022_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2022_税法_答案.txt",
+    "page_count": 7,
+    "char_count": 8839
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2022,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2022_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2022_税法_题目.txt",
+    "page_count": 9,
+    "char_count": 8937
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2023,
+    "paper_type": "答案",
+    "source_pdf": "public/pdf/tax/2023_税法_答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2023_税法_答案.txt",
+    "page_count": 5,
+    "char_count": 8024
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2023,
+    "paper_type": "题目",
+    "source_pdf": "public/pdf/tax/2023_税法_题目.pdf",
+    "output_text": "generated/question_bank_text/tax/2023_税法_题目.txt",
+    "page_count": 14,
+    "char_count": 8314
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2024,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/tax/2024_税法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2024_税法_题目和答案.txt",
+    "page_count": 15,
+    "char_count": 16544
+  },
+  {
+    "subject_dir": "tax",
+    "year": 2025,
+    "paper_type": "题目和答案",
+    "source_pdf": "public/pdf/tax/2025_税法_题目和答案.pdf",
+    "output_text": "generated/question_bank_text/tax/2025_税法_题目和答案.txt",
+    "page_count": 26,
+    "char_count": 17612
+  }
+]

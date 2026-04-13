@@ -1,0 +1,137 @@
+{
+  "subject": "经济法",
+  "total_questions": 543,
+  "years": [
+    {
+      "year": 2013,
+      "count": 35,
+      "single_count": 21,
+      "multiple_count": 10,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 31,
+      "analysis_count": 35
+    },
+    {
+      "year": 2014,
+      "count": 37,
+      "single_count": 22,
+      "multiple_count": 11,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 33,
+      "analysis_count": 37
+    },
+    {
+      "year": 2015,
+      "count": 36,
+      "single_count": 19,
+      "multiple_count": 13,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 32,
+      "analysis_count": 36
+    },
+    {
+      "year": 2016,
+      "count": 54,
+      "single_count": 33,
+      "multiple_count": 13,
+      "analysis_count_total": 0,
+      "case_count": 8,
+      "answered_count": 46,
+      "analysis_count": 54
+    },
+    {
+      "year": 2017,
+      "count": 42,
+      "single_count": 24,
+      "multiple_count": 14,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 38,
+      "analysis_count": 42
+    },
+    {
+      "year": 2018,
+      "count": 43,
+      "single_count": 24,
+      "multiple_count": 14,
+      "analysis_count_total": 0,
+      "case_count": 5,
+      "answered_count": 37,
+      "analysis_count": 41
+    },
+    {
+      "year": 2019,
+      "count": 42,
+      "single_count": 24,
+      "multiple_count": 14,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 37,
+      "analysis_count": 41
+    },
+    {
+      "year": 2020,
+      "count": 42,
+      "single_count": 24,
+      "multiple_count": 14,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 38,
+      "analysis_count": 42
+    },
+    {
+      "year": 2021,
+      "count": 46,
+      "single_count": 26,
+      "multiple_count": 16,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 41,
+      "analysis_count": 45
+    },
+    {
+      "year": 2022,
+      "count": 32,
+      "single_count": 15,
+      "multiple_count": 16,
+      "analysis_count_total": 0,
+      "case_count": 1,
+      "answered_count": 31,
+      "analysis_count": 32
+    },
+    {
+      "year": 2023,
+      "count": 47,
+      "single_count": 27,
+      "multiple_count": 16,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 41,
+      "analysis_count": 45
+    },
+    {
+      "year": 2024,
+      "count": 56,
+      "single_count": 28,
+      "multiple_count": 22,
+      "analysis_count_total": 0,
+      "case_count": 6,
+      "answered_count": 50,
+      "analysis_count": 56
+    },
+    {
+      "year": 2025,
+      "count": 31,
+      "single_count": 15,
+      "multiple_count": 9,
+      "analysis_count_total": 0,
+      "case_count": 7,
+      "answered_count": 24,
+      "analysis_count": 31
+    }
+  ],
+  "practice_output": "public/data/law-question-bank.json"
+}

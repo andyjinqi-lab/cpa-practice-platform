@@ -1,0 +1,137 @@
+{
+  "subject": "财务成本管理",
+  "total_questions": 393,
+  "years": [
+    {
+      "year": 2013,
+      "count": 32,
+      "single_count": 20,
+      "multiple_count": 9,
+      "analysis_count_total": 3,
+      "case_count": 0,
+      "answered_count": 29,
+      "analysis_count": 32
+    },
+    {
+      "year": 2014,
+      "count": 30,
+      "single_count": 14,
+      "multiple_count": 11,
+      "analysis_count_total": 4,
+      "case_count": 1,
+      "answered_count": 25,
+      "analysis_count": 27
+    },
+    {
+      "year": 2015,
+      "count": 29,
+      "single_count": 13,
+      "multiple_count": 9,
+      "analysis_count_total": 6,
+      "case_count": 1,
+      "answered_count": 22,
+      "analysis_count": 28
+    },
+    {
+      "year": 2016,
+      "count": 33,
+      "single_count": 15,
+      "multiple_count": 9,
+      "analysis_count_total": 7,
+      "case_count": 2,
+      "answered_count": 24,
+      "analysis_count": 31
+    },
+    {
+      "year": 2017,
+      "count": 31,
+      "single_count": 14,
+      "multiple_count": 12,
+      "analysis_count_total": 5,
+      "case_count": 0,
+      "answered_count": 26,
+      "analysis_count": 24
+    },
+    {
+      "year": 2018,
+      "count": 31,
+      "single_count": 14,
+      "multiple_count": 12,
+      "analysis_count_total": 5,
+      "case_count": 0,
+      "answered_count": 26,
+      "analysis_count": 24
+    },
+    {
+      "year": 2019,
+      "count": 31,
+      "single_count": 14,
+      "multiple_count": 12,
+      "analysis_count_total": 5,
+      "case_count": 0,
+      "answered_count": 26,
+      "analysis_count": 25
+    },
+    {
+      "year": 2020,
+      "count": 33,
+      "single_count": 15,
+      "multiple_count": 12,
+      "analysis_count_total": 5,
+      "case_count": 1,
+      "answered_count": 27,
+      "analysis_count": 24
+    },
+    {
+      "year": 2021,
+      "count": 29,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 4,
+      "case_count": 0,
+      "answered_count": 25,
+      "analysis_count": 23
+    },
+    {
+      "year": 2022,
+      "count": 30,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 4,
+      "case_count": 1,
+      "answered_count": 25,
+      "analysis_count": 29
+    },
+    {
+      "year": 2023,
+      "count": 29,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 4,
+      "case_count": 0,
+      "answered_count": 25,
+      "analysis_count": 22
+    },
+    {
+      "year": 2024,
+      "count": 35,
+      "single_count": 21,
+      "multiple_count": 12,
+      "analysis_count_total": 0,
+      "case_count": 2,
+      "answered_count": 33,
+      "analysis_count": 33
+    },
+    {
+      "year": 2025,
+      "count": 20,
+      "single_count": 11,
+      "multiple_count": 8,
+      "analysis_count_total": 1,
+      "case_count": 0,
+      "answered_count": 19,
+      "analysis_count": 20
+    }
+  ],
+  "practice_output": "public/data/finance-question-bank.json"
+}

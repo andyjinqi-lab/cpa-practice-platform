@@ -1,0 +1,137 @@
+{
+  "subject": "会计",
+  "total_questions": 321,
+  "years": [
+    {
+      "year": 2013,
+      "count": 24,
+      "single_count": 12,
+      "multiple_count": 10,
+      "analysis_count_total": 0,
+      "case_count": 2,
+      "answered_count": 22,
+      "analysis_count": 24
+    },
+    {
+      "year": 2014,
+      "count": 21,
+      "single_count": 11,
+      "multiple_count": 6,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 17,
+      "analysis_count": 21
+    },
+    {
+      "year": 2015,
+      "count": 25,
+      "single_count": 12,
+      "multiple_count": 9,
+      "analysis_count_total": 0,
+      "case_count": 4,
+      "answered_count": 21,
+      "analysis_count": 25
+    },
+    {
+      "year": 2016,
+      "count": 24,
+      "single_count": 11,
+      "multiple_count": 9,
+      "analysis_count_total": 2,
+      "case_count": 2,
+      "answered_count": 20,
+      "analysis_count": 24
+    },
+    {
+      "year": 2017,
+      "count": 27,
+      "single_count": 13,
+      "multiple_count": 10,
+      "analysis_count_total": 2,
+      "case_count": 2,
+      "answered_count": 21,
+      "analysis_count": 21
+    },
+    {
+      "year": 2018,
+      "count": 24,
+      "single_count": 12,
+      "multiple_count": 10,
+      "analysis_count_total": 1,
+      "case_count": 1,
+      "answered_count": 22,
+      "analysis_count": 22
+    },
+    {
+      "year": 2019,
+      "count": 24,
+      "single_count": 12,
+      "multiple_count": 10,
+      "analysis_count_total": 1,
+      "case_count": 1,
+      "answered_count": 12,
+      "analysis_count": 12
+    },
+    {
+      "year": 2020,
+      "count": 24,
+      "single_count": 12,
+      "multiple_count": 10,
+      "analysis_count_total": 1,
+      "case_count": 1,
+      "answered_count": 22,
+      "analysis_count": 22
+    },
+    {
+      "year": 2021,
+      "count": 28,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 2,
+      "case_count": 1,
+      "answered_count": 23,
+      "analysis_count": 22
+    },
+    {
+      "year": 2022,
+      "count": 29,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 2,
+      "case_count": 2,
+      "answered_count": 25,
+      "analysis_count": 29
+    },
+    {
+      "year": 2023,
+      "count": 27,
+      "single_count": 13,
+      "multiple_count": 12,
+      "analysis_count_total": 1,
+      "case_count": 1,
+      "answered_count": 25,
+      "analysis_count": 24
+    },
+    {
+      "year": 2024,
+      "count": 21,
+      "single_count": 10,
+      "multiple_count": 8,
+      "analysis_count_total": 0,
+      "case_count": 3,
+      "answered_count": 18,
+      "analysis_count": 21
+    },
+    {
+      "year": 2025,
+      "count": 23,
+      "single_count": 6,
+      "multiple_count": 12,
+      "analysis_count_total": 3,
+      "case_count": 2,
+      "answered_count": 18,
+      "analysis_count": 23
+    }
+  ],
+  "practice_output": "public/data/accounting-question-bank.json"
+}
