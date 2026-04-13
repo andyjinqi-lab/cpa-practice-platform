@@ -38,6 +38,8 @@
       </div>
     </section>
 
+    <SupportDonate />
+
     <section class="container">
       <h2 class="section-title">我们先把最重要的几件事做好</h2>
       <div class="feature-grid">
@@ -73,6 +75,10 @@
     </section>
   </div>
 </template>
+
+<script setup>
+import SupportDonate from '../components/SupportDonate.vue'
+</script>
 
 <style scoped>
 .home-view {
