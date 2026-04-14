@@ -1,5 +1,7 @@
 const SESSION_KEY = 'authSession'
-const API_BASE = String(import.meta.env.VITE_API_BASE || '').replace(/\/$/, '')
+const API_BASE = String(
+  import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://cpa.afinance.site' : '')
+).replace(/\/$/, '')
 
 function resolveApiUrl(path) {
   const target = String(path || '')
