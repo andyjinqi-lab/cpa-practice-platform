@@ -48,13 +48,13 @@ const form = ref({
   confirmPassword: ''
 })
 
-onMounted(() => {
+onMounted(async () => {
   token.value = String(route.query.token || '')
   if (!token.value) {
     tokenError.value = '缺少重置令牌，请重新申请重置密码。'
     return
   }
-  const check = verifyResetToken(token.value)
+  const check = await verifyResetToken(token.value)
   if (!check.ok) {
     tokenError.value = check.message
   }
@@ -136,4 +136,3 @@ const handleReset = async () => {
   text-align: center;
 }
 </style>
-

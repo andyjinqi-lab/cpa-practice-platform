@@ -24,3 +24,13 @@ pm2 restart cpa-api --update-env
 pm2 list
 pm2 logs cpa-api --lines 50 --nostream
 curl -I https://cpa.afinance.site
+
+最稳的方法是看 Git 提交号 是否一致。
+
+本地看提交号（PowerShell）
+cd "E:\Trae Projects\CPA"
+git rev-parse --short HEAD
+服务器看提交号
+cd /opt/cpa/app
+git rev-parse --short HEAD
+两边一样就表示代码版本一致。

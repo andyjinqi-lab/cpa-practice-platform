@@ -219,7 +219,7 @@
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getExamById, getPdfAssets } from '../data/examLibrary'
-import { getSessionEmail, getUserScopedKey } from '../services/auth'
+import { savePracticeReview } from '../services/auth'
 
 const route = useRoute()
 const router = useRouter()
@@ -467,7 +467,7 @@ const updateSubjectiveAnswer = (questionId, value) => {
   target.subjectiveAnswer = value
 }
 
-const confirmSubmit = () => {
+const confirmSubmit = async () => {
   submitted.value = true
   showSubmitModal.value = false
   showAnalysis.value = hasExplanation(currentQuestion.value)
@@ -500,23 +500,9 @@ const confirmSubmit = () => {
     }))
   }
 
-  const sessionEmail = getSessionEmail()
-  const latestKey = getUserScopedKey('latestPracticeReview', sessionEmail)
-  const historyKey = getUserScopedKey('practiceReviewHistory', sessionEmail)
-
-  localStorage.setItem(latestKey, JSON.stringify(reviewPayload))
-
-  try {
-    const rawHistory = localStorage.getItem(historyKey)
-    const history = rawHistory ? JSON.parse(rawHistory) : []
-    const deduped = Array.isArray(history)
-      ? history.filter(
-          (item) => !(Number(item?.examId) === Number(reviewPayload.examId) && Number(item?.year) === Number(reviewPayload.year))
-        )
-      : []
-    localStorage.setItem(historyKey, JSON.stringify([reviewPayload, ...deduped].slice(0, 120)))
-  } catch (error) {
-    console.warn('practice review history save failed:', error)
+  const saved = await savePracticeReview(reviewPayload)
+  if (!saved.ok) {
+    console.warn('practice review save failed: server storage unavailable')
   }
 
   router.push({ name: 'profile', query: { source: 'exam-review' } })

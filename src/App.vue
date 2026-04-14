@@ -53,8 +53,8 @@ function refreshSession() {
   session.value = getSession()
 }
 
-function handleLogout() {
-  logout()
+async function handleLogout() {
+  await logout()
   refreshSession()
   router.push('/login')
 }
