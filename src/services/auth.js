@@ -1,7 +1,8 @@
 const SESSION_KEY = 'authSession'
-const API_BASE = String(
-  import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? 'https://cpa.afinance.site' : '')
-).replace(/\/$/, '')
+const TEMP_API_BASE = 'https://api-cpa.pages.dev'
+const isLocalHost =
+  typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname)
+const API_BASE = String(import.meta.env.VITE_API_BASE || (isLocalHost ? '' : TEMP_API_BASE)).replace(/\/$/, '')
 
 function resolveApiUrl(path) {
   const target = String(path || '')

@@ -1,4 +1,4 @@
-const API_ORIGIN = 'https://cpa.afinance.site'
+const API_ORIGIN = 'https://api-cpa.pages.dev'
 
 export async function onRequest(context) {
   const request = context.request
@@ -6,7 +6,7 @@ export async function onRequest(context) {
   const targetUrl = new URL(`${API_ORIGIN}${incomingUrl.pathname}${incomingUrl.search}`)
 
   const headers = new Headers(request.headers)
-  headers.set('host', 'cpa.afinance.site')
+  headers.set('host', 'api-cpa.pages.dev')
 
   const init = {
     method: request.method,

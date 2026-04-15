@@ -1,1 +1,3 @@
+/api/* https://cpa.afinance.site/api/:splat 200
 /* /index.html 200
+
