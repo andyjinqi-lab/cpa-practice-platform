@@ -1,5 +1,5 @@
 const SESSION_KEY = 'authSession'
-const TEMP_API_BASE = 'https://api-cpa.pages.dev'
+const TEMP_API_BASE = 'https://cpa-api-iwre.onrender.com'
 const isLocalHost =
   typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname)
 const API_BASE = String(import.meta.env.VITE_API_BASE || (isLocalHost ? '' : TEMP_API_BASE)).replace(/\/$/, '')
