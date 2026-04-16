@@ -1,23 +1,19 @@
-import crypto from 'crypto'
-import fs from 'fs/promises'
-import path from 'path'
+﻿import crypto from 'crypto'
+import { Pool } from 'pg'
 
-const DATA_DIR = process.env.DATA_DIR || path.resolve(process.cwd(), 'server', 'data')
-const DATA_FILE = path.join(DATA_DIR, 'app-db.json')
 const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000
 const RESET_TTL_MS = 30 * 60 * 1000
 
-const EMPTY_DATA = {
-  users: [],
-  sessions: [],
-  passwordResets: [],
-  practiceReviews: [],
-  latestReviews: {}
+const DATABASE_URL = String(process.env.DATABASE_URL || '').trim()
+if (!DATABASE_URL) {
+  throw new Error('DATABASE_URL is required. Please configure PostgreSQL before starting the API.')
 }
 
-let loaded = false
-let state = structuredClone(EMPTY_DATA)
-let writeQueue = Promise.resolve()
+const useSsl = !/(localhost|127\.0\.0\.1)/i.test(DATABASE_URL)
+const pool = new Pool({
+  connectionString: DATABASE_URL,
+  ssl: useSsl ? { rejectUnauthorized: false } : false
+})
 
 function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase()
@@ -48,207 +44,6 @@ function verifyPassword(password, encoded) {
   return crypto.timingSafeEqual(Buffer.from(digest), Buffer.from(expected))
 }
 
-async function loadState() {
-  if (loaded) return
-
-  await fs.mkdir(DATA_DIR, { recursive: true })
-
-  try {
-    const raw = await fs.readFile(DATA_FILE, 'utf8')
-    const parsed = JSON.parse(raw)
-    state = {
-      users: Array.isArray(parsed.users) ? parsed.users : [],
-      sessions: Array.isArray(parsed.sessions) ? parsed.sessions : [],
-      passwordResets: Array.isArray(parsed.passwordResets) ? parsed.passwordResets : [],
-      practiceReviews: Array.isArray(parsed.practiceReviews) ? parsed.practiceReviews : [],
-      latestReviews: parsed.latestReviews && typeof parsed.latestReviews === 'object' ? parsed.latestReviews : {}
-    }
-  } catch {
-    state = structuredClone(EMPTY_DATA)
-    await fs.writeFile(DATA_FILE, JSON.stringify(state, null, 2))
-  }
-
-  loaded = true
-}
-
-function queueWrite() {
-  writeQueue = writeQueue.then(() => fs.writeFile(DATA_FILE, JSON.stringify(state, null, 2)))
-  return writeQueue
-}
-
-function cleanupState() {
-  const now = Date.now()
-  state.sessions = state.sessions.filter((item) => Number(item.expiresAt || 0) > now)
-  state.passwordResets = state.passwordResets
-    .filter((item) => !item.used && Number(item.expiresAt || 0) > now)
-    .slice(0, 500)
-  state.practiceReviews = state.practiceReviews.slice(0, 4000)
-}
-
-async function mutateState(mutator) {
-  await loadState()
-  const result = mutator()
-  cleanupState()
-  await queueWrite()
-  return result
-}
-
-async function readState(reader) {
-  await loadState()
-  return reader()
-}
-
-export async function registerUser({ email, password }) {
-  const normalizedEmail = normalizeEmail(email)
-  if (!normalizedEmail) return { ok: false, message: '请输入邮箱地址' }
-  if (String(password || '').length < 8) return { ok: false, message: '密码至少 8 位' }
-
-  return mutateState(() => {
-    if (state.users.some((item) => item.email === normalizedEmail)) {
-      return { ok: false, message: '该邮箱已注册，请直接登录' }
-    }
-
-    const now = nowIso()
-    const user = {
-      id: uid(),
-      email: normalizedEmail,
-      passwordHash: hashPassword(password),
-      createdAt: now,
-      updatedAt: now
-    }
-    state.users.push(user)
-
-    const sessionToken = makeToken()
-    const session = {
-      token: sessionToken,
-      userId: user.id,
-      email: user.email,
-      createdAt: now,
-      updatedAt: now,
-      expiresAt: Date.now() + SESSION_TTL_MS
-    }
-    state.sessions.push(session)
-
-    return {
-      ok: true,
-      session: { token: sessionToken, userId: user.id, email: user.email }
-    }
-  })
-}
-
-export async function loginUser({ email, password }) {
-  const normalizedEmail = normalizeEmail(email)
-  if (!normalizedEmail || !password) return { ok: false, message: '邮箱或密码错误' }
-
-  return mutateState(() => {
-    const user = state.users.find((item) => item.email === normalizedEmail)
-    if (!user) return { ok: false, message: '邮箱或密码错误' }
-    if (!verifyPassword(password, user.passwordHash)) return { ok: false, message: '邮箱或密码错误' }
-
-    state.sessions = state.sessions.filter((item) => !(item.userId === user.id && item.email === user.email))
-    const now = nowIso()
-    const token = makeToken()
-    state.sessions.push({
-      token,
-      userId: user.id,
-      email: user.email,
-      createdAt: now,
-      updatedAt: now,
-      expiresAt: Date.now() + SESSION_TTL_MS
-    })
-
-    return {
-      ok: true,
-      session: { token, userId: user.id, email: user.email }
-    }
-  })
-}
-
-export async function getSessionByToken(token) {
-  const safeToken = String(token || '').trim()
-  if (!safeToken) return null
-
-  return mutateState(() => {
-    const session = state.sessions.find((item) => item.token === safeToken)
-    if (!session) return null
-    if (Number(session.expiresAt || 0) <= Date.now()) {
-      state.sessions = state.sessions.filter((item) => item.token !== safeToken)
-      return null
-    }
-    session.updatedAt = nowIso()
-    return { token: session.token, userId: session.userId, email: session.email }
-  })
-}
-
-export async function revokeSession(token) {
-  const safeToken = String(token || '').trim()
-  if (!safeToken) return
-  await mutateState(() => {
-    state.sessions = state.sessions.filter((item) => item.token !== safeToken)
-  })
-}
-
-export async function createResetRequest(email) {
-  const normalizedEmail = normalizeEmail(email)
-  if (!normalizedEmail) return null
-
-  return mutateState(() => {
-    const user = state.users.find((item) => item.email === normalizedEmail)
-    if (!user) return null
-
-    const token = makeToken()
-    state.passwordResets = state.passwordResets.filter((item) => item.email !== normalizedEmail)
-    state.passwordResets.unshift({
-      id: uid(),
-      userId: user.id,
-      email: user.email,
-      token,
-      used: false,
-      createdAt: nowIso(),
-      expiresAt: Date.now() + RESET_TTL_MS
-    })
-    return { token, email: user.email }
-  })
-}
-
-export async function verifyResetRequest(token) {
-  const safeToken = String(token || '').trim()
-  if (!safeToken) return { ok: false, message: '重置链接无效' }
-
-  return readState(() => {
-    const request = state.passwordResets.find((item) => item.token === safeToken)
-    if (!request) return { ok: false, message: '重置链接无效' }
-    if (request.used) return { ok: false, message: '重置链接已使用，请重新申请' }
-    if (Number(request.expiresAt || 0) <= Date.now()) return { ok: false, message: '重置链接已过期，请重新申请' }
-    return { ok: true, email: request.email }
-  })
-}
-
-export async function resetPassword({ token, newPassword }) {
-  if (String(newPassword || '').length < 8) return { ok: false, message: '新密码至少 8 位' }
-  const safeToken = String(token || '').trim()
-  if (!safeToken) return { ok: false, message: '重置链接无效' }
-
-  return mutateState(() => {
-    const request = state.passwordResets.find((item) => item.token === safeToken)
-    if (!request || request.used) return { ok: false, message: '重置链接无效或已使用' }
-    if (Number(request.expiresAt || 0) <= Date.now()) return { ok: false, message: '重置链接已过期，请重新申请' }
-
-    const user = state.users.find((item) => item.email === request.email)
-    if (!user) return { ok: false, message: '用户不存在，请重新注册' }
-
-    user.passwordHash = hashPassword(newPassword)
-    user.updatedAt = nowIso()
-
-    state.passwordResets = state.passwordResets.map((item) => {
-      if (item.token === safeToken || item.email === request.email) return { ...item, used: true }
-      return item
-    })
-
-    return { ok: true, message: '密码已重置，请用新密码登录' }
-  })
-}
-
 function normalizeReviewPayload(payload) {
   const questions = Array.isArray(payload?.questions) ? payload.questions : []
   return {
@@ -265,35 +60,330 @@ function normalizeReviewPayload(payload) {
   }
 }
 
+function rowToReview(row) {
+  if (!row) return null
+  return {
+    examId: Number(row.exam_id || 0),
+    examName: String(row.exam_name || ''),
+    examShort: String(row.exam_short || ''),
+    year: Number(row.year || 0),
+    submittedAt: String(row.submitted_at || nowIso()),
+    totalQuestions: Number(row.total_questions || 0),
+    answeredCount: Number(row.answered_count || 0),
+    answerKnownCount: Number(row.answer_known_count || 0),
+    correctCount: Number(row.correct_count || 0),
+    questions: Array.isArray(row.questions) ? row.questions : []
+  }
+}
+
+async function cleanupState(client) {
+  const now = Date.now()
+  await client.query('DELETE FROM sessions WHERE expires_at <= $1', [now])
+  await client.query('DELETE FROM password_resets WHERE used = TRUE OR expires_at <= $1', [now])
+}
+
+export async function registerUser({ email, password }) {
+  const normalizedEmail = normalizeEmail(email)
+  if (!normalizedEmail) return { ok: false, message: 'email_required' }
+  if (String(password || '').length < 8) return { ok: false, message: 'password_too_short' }
+
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    await cleanupState(client)
+
+    const exists = await client.query('SELECT 1 FROM users WHERE email = $1 LIMIT 1', [normalizedEmail])
+    if (exists.rowCount) {
+      await client.query('ROLLBACK')
+      return { ok: false, message: 'email_exists' }
+    }
+
+    const now = nowIso()
+    const userId = uid()
+    await client.query(
+      `INSERT INTO users (id, email, password_hash, created_at, updated_at)
+       VALUES ($1, $2, $3, $4, $4)`,
+      [userId, normalizedEmail, hashPassword(password), now]
+    )
+
+    const sessionToken = makeToken()
+    await client.query(
+      `INSERT INTO sessions (token, user_id, email, created_at, updated_at, expires_at)
+       VALUES ($1, $2, $3, $4, $4, $5)`,
+      [sessionToken, userId, normalizedEmail, now, Date.now() + SESSION_TTL_MS]
+    )
+
+    await client.query('COMMIT')
+    return {
+      ok: true,
+      session: { token: sessionToken, userId, email: normalizedEmail }
+    }
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
+  }
+}
+
+export async function loginUser({ email, password }) {
+  const normalizedEmail = normalizeEmail(email)
+  if (!normalizedEmail || !password) return { ok: false, message: 'invalid_credentials' }
+
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    await cleanupState(client)
+
+    const userResult = await client.query('SELECT id, email, password_hash FROM users WHERE email = $1 LIMIT 1', [
+      normalizedEmail
+    ])
+    const user = userResult.rows[0]
+    if (!user || !verifyPassword(password, user.password_hash)) {
+      await client.query('ROLLBACK')
+      return { ok: false, message: 'invalid_credentials' }
+    }
+
+    await client.query('DELETE FROM sessions WHERE user_id = $1 AND email = $2', [user.id, user.email])
+    const now = nowIso()
+    const token = makeToken()
+    await client.query(
+      `INSERT INTO sessions (token, user_id, email, created_at, updated_at, expires_at)
+       VALUES ($1, $2, $3, $4, $4, $5)`,
+      [token, user.id, user.email, now, Date.now() + SESSION_TTL_MS]
+    )
+
+    await client.query('COMMIT')
+    return {
+      ok: true,
+      session: { token, userId: user.id, email: user.email }
+    }
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
+  }
+}
+
+export async function getSessionByToken(token) {
+  const safeToken = String(token || '').trim()
+  if (!safeToken) return null
+
+  const client = await pool.connect()
+  try {
+    await cleanupState(client)
+    const result = await client.query('SELECT token, user_id, email FROM sessions WHERE token = $1 LIMIT 1', [
+      safeToken
+    ])
+    const session = result.rows[0]
+    if (!session) return null
+    await client.query('UPDATE sessions SET updated_at = $2 WHERE token = $1', [safeToken, nowIso()])
+    return { token: session.token, userId: session.user_id, email: session.email }
+  } finally {
+    client.release()
+  }
+}
+
+export async function revokeSession(token) {
+  const safeToken = String(token || '').trim()
+  if (!safeToken) return
+  await pool.query('DELETE FROM sessions WHERE token = $1', [safeToken])
+}
+
+export async function createResetRequest(email) {
+  const normalizedEmail = normalizeEmail(email)
+  if (!normalizedEmail) return null
+
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    await cleanupState(client)
+
+    const userResult = await client.query('SELECT id, email FROM users WHERE email = $1 LIMIT 1', [normalizedEmail])
+    const user = userResult.rows[0]
+    if (!user) {
+      await client.query('ROLLBACK')
+      return null
+    }
+
+    const token = makeToken()
+    await client.query('DELETE FROM password_resets WHERE email = $1', [normalizedEmail])
+    await client.query(
+      `INSERT INTO password_resets (id, user_id, email, token, used, created_at, expires_at)
+       VALUES ($1, $2, $3, $4, FALSE, $5, $6)`,
+      [uid(), user.id, user.email, token, nowIso(), Date.now() + RESET_TTL_MS]
+    )
+
+    await client.query('COMMIT')
+    return { token, email: user.email }
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
+  }
+}
+
+export async function verifyResetRequest(token) {
+  const safeToken = String(token || '').trim()
+  if (!safeToken) return { ok: false, message: 'invalid_reset_token' }
+
+  const client = await pool.connect()
+  try {
+    await cleanupState(client)
+    const result = await client.query(
+      'SELECT email, used, expires_at FROM password_resets WHERE token = $1 LIMIT 1',
+      [safeToken]
+    )
+    const request = result.rows[0]
+    if (!request) return { ok: false, message: 'invalid_reset_token' }
+    if (request.used) return { ok: false, message: 'reset_token_used' }
+    if (Number(request.expires_at || 0) <= Date.now()) return { ok: false, message: 'reset_token_expired' }
+    return { ok: true, email: request.email }
+  } finally {
+    client.release()
+  }
+}
+
+export async function resetPassword({ token, newPassword }) {
+  if (String(newPassword || '').length < 8) return { ok: false, message: 'password_too_short' }
+  const safeToken = String(token || '').trim()
+  if (!safeToken) return { ok: false, message: 'invalid_reset_token' }
+
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    await cleanupState(client)
+
+    const requestResult = await client.query(
+      'SELECT email, used, expires_at FROM password_resets WHERE token = $1 LIMIT 1',
+      [safeToken]
+    )
+    const request = requestResult.rows[0]
+    if (!request || request.used) {
+      await client.query('ROLLBACK')
+      return { ok: false, message: 'invalid_reset_token' }
+    }
+    if (Number(request.expires_at || 0) <= Date.now()) {
+      await client.query('ROLLBACK')
+      return { ok: false, message: 'reset_token_expired' }
+    }
+
+    const userResult = await client.query('SELECT id FROM users WHERE email = $1 LIMIT 1', [request.email])
+    if (!userResult.rowCount) {
+      await client.query('ROLLBACK')
+      return { ok: false, message: 'user_not_found' }
+    }
+
+    await client.query('UPDATE users SET password_hash = $2, updated_at = $3 WHERE email = $1', [
+      request.email,
+      hashPassword(newPassword),
+      nowIso()
+    ])
+    await client.query('UPDATE password_resets SET used = TRUE WHERE token = $1 OR email = $2', [
+      safeToken,
+      request.email
+    ])
+
+    await client.query('COMMIT')
+    return { ok: true, message: 'password_reset_success' }
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
+  }
+}
+
 export async function upsertPracticeReview({ userId, email, review }) {
   const normalized = normalizeReviewPayload(review)
   if (!normalized.examId || !normalized.year) return { ok: false, message: 'invalid_review_payload' }
 
-  return mutateState(() => {
-    state.practiceReviews = state.practiceReviews.filter(
-      (item) => !(item.userId === userId && item.examId === normalized.examId && item.year === normalized.year)
-    )
-    state.practiceReviews.unshift({
-      ...normalized,
-      id: uid(),
-      userId,
-      email,
-      updatedAt: nowIso()
-    })
+  const client = await pool.connect()
+  try {
+    await client.query('BEGIN')
+    await cleanupState(client)
 
-    state.latestReviews[userId] = normalized
+    const now = nowIso()
+    await client.query(
+      `INSERT INTO practice_reviews (
+         id, user_id, email, exam_id, exam_name, exam_short, year,
+         submitted_at, total_questions, answered_count, answer_known_count, correct_count,
+         questions, updated_at
+       )
+       VALUES (
+         $1, $2, $3, $4, $5, $6, $7,
+         $8, $9, $10, $11, $12,
+         $13::jsonb, $14
+       )
+       ON CONFLICT (user_id, exam_id, year)
+       DO UPDATE SET
+         email = EXCLUDED.email,
+         exam_name = EXCLUDED.exam_name,
+         exam_short = EXCLUDED.exam_short,
+         submitted_at = EXCLUDED.submitted_at,
+         total_questions = EXCLUDED.total_questions,
+         answered_count = EXCLUDED.answered_count,
+         answer_known_count = EXCLUDED.answer_known_count,
+         correct_count = EXCLUDED.correct_count,
+         questions = EXCLUDED.questions,
+         updated_at = EXCLUDED.updated_at`,
+      [
+        uid(),
+        userId,
+        email,
+        normalized.examId,
+        normalized.examName,
+        normalized.examShort,
+        normalized.year,
+        normalized.submittedAt,
+        normalized.totalQuestions,
+        normalized.answeredCount,
+        normalized.answerKnownCount,
+        normalized.correctCount,
+        JSON.stringify(normalized.questions || []),
+        now
+      ]
+    )
+
+    await client.query(
+      `INSERT INTO latest_reviews (user_id, latest, updated_at)
+       VALUES ($1, $2::jsonb, $3)
+       ON CONFLICT (user_id)
+       DO UPDATE SET latest = EXCLUDED.latest, updated_at = EXCLUDED.updated_at`,
+      [userId, JSON.stringify(normalized), now]
+    )
+
+    await client.query('COMMIT')
     return { ok: true }
-  })
+  } catch (error) {
+    await client.query('ROLLBACK')
+    throw error
+  } finally {
+    client.release()
+  }
 }
 
 export async function getPracticeReviews({ userId }) {
-  return readState(() => {
-    const history = state.practiceReviews
-      .filter((item) => item.userId === userId)
-      .sort((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())
-      .slice(0, 120)
+  const client = await pool.connect()
+  try {
+    await cleanupState(client)
+    const historyResult = await client.query(
+      `SELECT exam_id, exam_name, exam_short, year, submitted_at, total_questions, answered_count,
+              answer_known_count, correct_count, questions
+       FROM practice_reviews
+       WHERE user_id = $1
+       ORDER BY submitted_at DESC
+       LIMIT 120`,
+      [userId]
+    )
 
-    const latest = state.latestReviews[userId] || history[0] || null
+    const history = historyResult.rows.map(rowToReview)
+    const latestResult = await client.query('SELECT latest FROM latest_reviews WHERE user_id = $1 LIMIT 1', [userId])
+    const latest = latestResult.rows[0]?.latest || history[0] || null
     return { latest, history }
-  })
+  } finally {
+    client.release()
+  }
 }

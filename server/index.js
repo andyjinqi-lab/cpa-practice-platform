@@ -83,7 +83,7 @@ async function requireAuth(req, res, next) {
 }
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, provider: 'resend', storage: 'server-file-db' })
+  res.json({ ok: true, provider: 'resend', storage: 'postgresql' })
 })
 
 app.post('/api/auth/register', async (req, res) => {
