@@ -14,11 +14,13 @@
           <router-link to="/">首页</router-link>
           <router-link to="/practice">真题练习</router-link>
           <router-link to="/profile">学习中心</router-link>
-          <router-link v-if="!isLoggedIn" to="/login" class="nav-action">登录</router-link>
-          <router-link v-if="!isLoggedIn" to="/register">注册</router-link>
-          <template v-else>
-            <span class="nav-email">{{ session?.email }}</span>
-            <button class="nav-logout" @click="handleLogout">退出</button>
+          <template v-if="!PUBLIC_FILING_REVIEW_MODE">
+            <router-link v-if="!isLoggedIn" to="/login" class="nav-action">登录</router-link>
+            <router-link v-if="!isLoggedIn" to="/register">注册</router-link>
+            <template v-else>
+              <span class="nav-email">{{ session?.email }}</span>
+              <button class="nav-logout" @click="handleLogout">退出</button>
+            </template>
           </template>
         </div>
       </nav>
@@ -43,6 +45,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { PUBLIC_FILING_REVIEW_MODE } from './config/reviewMode'
 import { getSession, logout } from './services/auth'
 
 const router = useRouter()
@@ -60,11 +63,13 @@ async function handleLogout() {
 }
 
 onMounted(() => {
+  if (PUBLIC_FILING_REVIEW_MODE) return
   window.addEventListener('storage', refreshSession)
   window.addEventListener('focus', refreshSession)
 })
 
 onUnmounted(() => {
+  if (PUBLIC_FILING_REVIEW_MODE) return
   window.removeEventListener('storage', refreshSession)
   window.removeEventListener('focus', refreshSession)
 })

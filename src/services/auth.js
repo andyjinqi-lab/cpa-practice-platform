@@ -1,4 +1,7 @@
+import { PUBLIC_FILING_REVIEW_MODE } from '../config/reviewMode'
+
 const SESSION_KEY = 'authSession'
+const LOCAL_REVIEW_KEY = 'publicFilingReviewData'
 const TEMP_API_BASE = 'https://cpa-api-iwre.onrender.com'
 const isLocalHost =
   typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname)
@@ -31,6 +34,14 @@ function writeJson(key, value) {
 
 function clearSessionStorage() {
   localStorage.removeItem(SESSION_KEY)
+}
+
+function readLocalReviewData() {
+  return readJson(LOCAL_REVIEW_KEY, { latest: null, history: [] })
+}
+
+function writeLocalReviewData(data) {
+  writeJson(LOCAL_REVIEW_KEY, data)
 }
 
 function getSessionToken() {
@@ -83,12 +94,16 @@ function saveSession(session) {
 }
 
 export function getSession() {
+  if (PUBLIC_FILING_REVIEW_MODE) return null
+
   const session = readJson(SESSION_KEY, null)
   if (!session?.token || !session?.email) return null
   return session
 }
 
 export function isAuthenticated() {
+  if (PUBLIC_FILING_REVIEW_MODE) return true
+
   const session = getSession()
   return Boolean(session?.token && session?.email)
 }
@@ -173,6 +188,22 @@ export async function resetPasswordWithToken({ token, newPassword }) {
 }
 
 export async function savePracticeReview(reviewPayload) {
+  if (PUBLIC_FILING_REVIEW_MODE) {
+    const data = readLocalReviewData()
+    const history = Array.isArray(data.history) ? data.history : []
+    const nextHistory = [
+      reviewPayload,
+      ...history.filter((item) => item.submittedAt !== reviewPayload.submittedAt)
+    ]
+
+    writeLocalReviewData({
+      latest: reviewPayload,
+      history: nextHistory
+    })
+
+    return { ok: true }
+  }
+
   const [latestResult, historyResult] = await Promise.all([
     apiRequest('/api/reviews/latest', {
       method: 'PUT',
@@ -190,6 +221,15 @@ export async function savePracticeReview(reviewPayload) {
 }
 
 export async function fetchPracticeReviewData() {
+  if (PUBLIC_FILING_REVIEW_MODE) {
+    const data = readLocalReviewData()
+    return {
+      ok: true,
+      latest: data.latest || null,
+      history: Array.isArray(data.history) ? data.history : []
+    }
+  }
+
   const [latestResult, historyResult] = await Promise.all([
     apiRequest('/api/reviews/latest', {
       method: 'GET',

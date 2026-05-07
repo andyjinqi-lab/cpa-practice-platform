@@ -8,8 +8,8 @@
 
         <div class="user-meta">
           <div>
-            <strong>{{ sessionEmail || '未登录' }}</strong>
-            <span>当前账号</span>
+            <strong>{{ sessionEmail || '公开浏览' }}</strong>
+            <span>浏览模式</span>
           </div>
           <div>
             <strong>{{ reviewHistory.length }} 套</strong>
