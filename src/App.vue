@@ -36,7 +36,13 @@
           <strong>CPA 真题练习平台</strong>
           <p>聚合历年真题 PDF、在线模拟与学习进度追踪。</p>
         </div>
-        <p>&copy; 2026 CPA Practice</p>
+        <div class="footer-records" aria-label="网站备案信息">
+          <p>&copy; 2026 CPA Practice</p>
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+            沪ICP备2026017304号-1
+          </a>
+          <span>公安联网备案号：待备案</span>
+        </div>
       </div>
     </footer>
   </div>
@@ -204,6 +210,25 @@ onUnmounted(() => {
   margin: 0.25rem 0 0;
 }
 
+.footer-records {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-size: 0.92rem;
+}
+
+.footer-records a,
+.footer-records span {
+  color: rgba(255, 255, 255, 0.76);
+  text-decoration: none;
+}
+
+.footer-records a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .site-header {
     position: static;
@@ -217,6 +242,10 @@ onUnmounted(() => {
 
   .nav-links {
     width: 100%;
+  }
+
+  .footer-records {
+    align-items: flex-start;
   }
 }
 </style>
