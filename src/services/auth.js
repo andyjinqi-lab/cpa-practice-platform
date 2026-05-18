@@ -2,10 +2,7 @@ import { PUBLIC_FILING_REVIEW_MODE } from '../config/reviewMode'
 
 const SESSION_KEY = 'authSession'
 const LOCAL_REVIEW_KEY = 'publicFilingReviewData'
-const TEMP_API_BASE = 'https://cpa-api-iwre.onrender.com'
-const isLocalHost =
-  typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname)
-const API_BASE = String(import.meta.env.VITE_API_BASE || (isLocalHost ? '' : TEMP_API_BASE)).replace(/\/$/, '')
+const API_BASE = String(import.meta.env.VITE_API_BASE || '').replace(/\/$/, '')
 
 function resolveApiUrl(path) {
   const target = String(path || '')
