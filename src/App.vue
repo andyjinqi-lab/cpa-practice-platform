@@ -41,7 +41,15 @@
           <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
             沪ICP备2026017304号-1
           </a>
-          <span>公安联网备案号：待备案</span>
+          <a
+            class="police-record"
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=31010402336708"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img src="/beian-police.png" alt="" aria-hidden="true">
+            <span>沪公网安备31010402336708号</span>
+          </a>
         </div>
       </div>
     </footer>
@@ -227,6 +235,18 @@ onUnmounted(() => {
 .footer-records a:hover {
   color: #fff;
   text-decoration: underline;
+}
+
+.police-record {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.police-record img {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 768px) {
