@@ -3,6 +3,7 @@ import { PUBLIC_FILING_REVIEW_MODE } from '../config/reviewMode'
 const SESSION_KEY = 'authSession'
 const LOCAL_REVIEW_KEY = 'publicFilingReviewData'
 const API_BASE = String(import.meta.env.VITE_API_BASE || '').replace(/\/$/, '')
+export const AUTH_SESSION_EVENT = 'cpa-auth-session-changed'
 
 function resolveApiUrl(path) {
   const target = String(path || '')
@@ -31,6 +32,7 @@ function writeJson(key, value) {
 
 function clearSessionStorage() {
   localStorage.removeItem(SESSION_KEY)
+  notifySessionChanged()
 }
 
 function readLocalReviewData() {
@@ -88,6 +90,11 @@ function saveSession(session) {
     email: normalizeEmail(session?.email || ''),
     loggedAt: new Date().toISOString()
   })
+  notifySessionChanged()
+}
+
+function notifySessionChanged() {
+  window.dispatchEvent(new CustomEvent(AUTH_SESSION_EVENT))
 }
 
 export function getSession() {

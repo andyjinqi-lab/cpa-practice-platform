@@ -60,11 +60,12 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { PUBLIC_FILING_REVIEW_MODE } from './config/reviewMode'
-import { getSession, logout } from './services/auth'
+import { AUTH_SESSION_EVENT, getSession, logout } from './services/auth'
 
 const router = useRouter()
 const session = ref(getSession())
 const isLoggedIn = computed(() => Boolean(session.value?.email))
+let removeRouteRefreshHook = null
 
 function refreshSession() {
   session.value = getSession()
@@ -78,12 +79,16 @@ async function handleLogout() {
 
 onMounted(() => {
   if (PUBLIC_FILING_REVIEW_MODE) return
+  removeRouteRefreshHook = router.afterEach(refreshSession)
+  window.addEventListener(AUTH_SESSION_EVENT, refreshSession)
   window.addEventListener('storage', refreshSession)
   window.addEventListener('focus', refreshSession)
 })
 
 onUnmounted(() => {
   if (PUBLIC_FILING_REVIEW_MODE) return
+  removeRouteRefreshHook?.()
+  window.removeEventListener(AUTH_SESSION_EVENT, refreshSession)
   window.removeEventListener('storage', refreshSession)
   window.removeEventListener('focus', refreshSession)
 })
